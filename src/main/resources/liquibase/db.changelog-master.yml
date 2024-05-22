@@ -1,4 +1,0 @@
-databaseChangeLog:
-  - include:
-      file: db.dev.changelog.yml
-      context: dev

@@ -16,10 +16,6 @@ spring:
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
 
-springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
-
 logging:
   level:
     org.hibernate.stat: DEBUG

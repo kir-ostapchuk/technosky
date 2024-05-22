@@ -1,4 +1,10 @@
 package com.ostapchuk.technosky.dto;
 
-public record ErrorResponse(String message, int status) {
+import lombok.Value;
+
+@Value
+public class ErrorResponse {
+
+    String message;
+    int status;
 }

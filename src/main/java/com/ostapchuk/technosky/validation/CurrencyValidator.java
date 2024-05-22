@@ -3,12 +3,10 @@ package com.ostapchuk.technosky.validation;
 import com.ostapchuk.technosky.entity.Currency;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import java.util.Optional;
 
-@Component
 public class CurrencyValidator implements ConstraintValidator<ValidCurrency, String> {
 
     @Override

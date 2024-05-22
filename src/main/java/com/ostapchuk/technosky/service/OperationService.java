@@ -1,6 +1,7 @@
 package com.ostapchuk.technosky.service;
 
 import com.ostapchuk.technosky.dto.OperationDto;
+import com.ostapchuk.technosky.mapper.OperationMapper;
 import com.ostapchuk.technosky.entity.Account;
 import com.ostapchuk.technosky.entity.Operation;
 import com.ostapchuk.technosky.repository.OperationRepository;
@@ -18,17 +19,12 @@ import static com.ostapchuk.technosky.entity.OperationStatus.APPLIED;
 @RequiredArgsConstructor
 public class OperationService {
 
+    private final OperationMapper operationMapper;
     private final OperationRepository operationRepository;
 
     public Page<OperationDto> findAll(Pageable pageable) {
         return operationRepository.findAll(pageable)
-              .map(op -> OperationDto.builder()
-                    .id(op.getId())
-                    .amount(op.getAmount())
-                    .senderId(op.getSender().getId())
-                    .receiverId(op.getReceiver().getId())
-                    .build()
-              );
+              .map(operationMapper::toDto);
     }
 
     public Operation save(List<Account> accounts, BigDecimal amount) {

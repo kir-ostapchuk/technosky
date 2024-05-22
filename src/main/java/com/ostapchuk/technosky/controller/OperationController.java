@@ -17,7 +17,7 @@ public class OperationController {
     private final OperationService operationService;
 
     @GetMapping
-    public Page<OperationDto> findAll(final Pageable p) {
-        return operationService.findAll(p);
+    public Page<OperationDto> findAll(final Pageable pageable) {
+        return operationService.findAll(pageable);
     }
 }

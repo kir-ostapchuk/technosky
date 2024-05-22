@@ -2,6 +2,7 @@ package com.ostapchuk.technosky.controller;
 
 import com.ostapchuk.technosky.dto.TransferRequest;
 import com.ostapchuk.technosky.dto.TransferResponse;
+import com.ostapchuk.technosky.entity.Operation;
 import com.ostapchuk.technosky.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
@@ -19,6 +20,10 @@ public class AccountController {
 
     @PostMapping("/transfer")
     public TransferResponse transfer(@Validated @RequestBody final TransferRequest transferRequest) {
-        return accountService.transfer(transferRequest);
+        final Operation operation = accountService.transfer(transferRequest);
+        return TransferResponse.builder()
+              .operationId(operation.getId())
+              .operationStatus(operation.getStatus().name())
+              .build();
     }
 }

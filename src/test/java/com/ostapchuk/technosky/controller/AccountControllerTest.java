@@ -33,7 +33,7 @@ class AccountControllerTest {
     @Test
     void testTransfer() throws Exception {
         // Given
-        TransferRequest transferRequest = TransferRequest.builder().senderId(1L).receiverId(2L)
+        TransferRequest transferRequest = TransferRequest.builder().senderUserId(1L).receiverUserId(2L)
               .amount(new BigDecimal("100.00")).build();
         TransferResponse expectedResponse = TransferResponse.builder().operationStatus(OperationStatus.APPLIED.name())
               .build();

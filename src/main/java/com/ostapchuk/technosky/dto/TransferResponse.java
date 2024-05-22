@@ -12,6 +12,8 @@ public class TransferResponse {
 
     private String operationStatus;
 
+    private Long operationId;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String message;
 }

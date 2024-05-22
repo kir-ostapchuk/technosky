@@ -27,6 +27,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Account {
+
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
@@ -36,10 +37,9 @@ public class Account {
 
     @OneToOne
     @JoinColumn(name = "client_id", nullable = false)
-    private Client client;
+    private User user;
 
     @Enumerated(STRING)
     @Column(name = "currency", nullable = false)
     private Currency currency;
-
 }

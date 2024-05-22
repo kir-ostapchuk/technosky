@@ -1,14 +1,16 @@
 package com.ostapchuk.technosky.dto;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Value;
 
 import java.math.BigDecimal;
 
-@Data
+@Value
 @Builder
 public class OperationDto {
-    private Long senderId;
-    private Long receiverId;
-    private BigDecimal amount;
+
+    Long id;
+    Long senderId;
+    Long receiverId;
+    BigDecimal amount;
 }

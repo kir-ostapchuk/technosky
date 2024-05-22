@@ -15,14 +15,14 @@ import lombok.Setter;
 import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.GenerationType.IDENTITY;
 
-@Table(name = "client")
+@Table(name = "users")
 @Entity
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Client {
+public class User {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;

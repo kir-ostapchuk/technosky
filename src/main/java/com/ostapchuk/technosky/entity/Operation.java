@@ -22,10 +22,6 @@ import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.FetchType.LAZY;
 import static jakarta.persistence.GenerationType.IDENTITY;
 
-@NamedEntityGraph(
-      name = "Operation.senderAndReceiver",
-      attributeNodes = {@NamedAttributeNode("sender"), @NamedAttributeNode("receiver")}
-)
 @Table(name = "operation")
 @Entity
 @Getter

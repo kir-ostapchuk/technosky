@@ -35,7 +35,7 @@ class OperationControllerTest {
     }
 
     @Test
-    void testFindAllOperations() throws Exception {
+    void testFindAll() throws Exception {
         // Given
         List<OperationDto> operations = Arrays.asList(
               new OperationDto(1L, 1L, 2L, 100.0),

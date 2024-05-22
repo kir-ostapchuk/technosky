@@ -1,26 +1,29 @@
 package com.ostapchuk.technosky.dto;
 
-import com.ostapchuk.technosky.entity.Currency;
-import jakarta.validation.constraints.Min;
+import com.ostapchuk.technosky.validation.ValidCurrency;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Data
-@Builder
+@Builder(toBuilder = true)
 public class TransferRequest {
 
     @NotNull
-    @Min(0)
-    private Long senderId;
+    @PositiveOrZero
+    private Long senderUserId;
+
     @NotNull
-    @Min(0)
-    private Long receiverId;
+    @PositiveOrZero
+    private Long receiverUserId;
+
     @NotNull
-    @Min(0)
+    @PositiveOrZero
     private BigDecimal amount;
-    @NotNull
-    private Currency currency;
+
+    @ValidCurrency
+    private String currency;
 }

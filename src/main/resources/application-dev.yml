@@ -1,20 +1,11 @@
 spring:
-  application:
-    name: technosky
   jpa:
-    open-in-view: false
     properties.hibernate:
       generate_statistics: true
       session:
         events.log.LOG_QUERIES_SLOWER_THAN_MS: 1
       show_sql: true
       format_sql: true
-      hbm2ddl.auto: validate
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${POSTGRES_HOSTNAME}:${POSTGRES_PORT}/${POSTGRES_DB}
-    username: ${POSTGRES_USER}
-    password: ${POSTGRES_PASSWORD}
 
 logging:
   level:

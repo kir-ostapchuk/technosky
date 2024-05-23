@@ -36,7 +36,7 @@ public class Account {
     private BigDecimal balance;
 
     @OneToOne
-    @JoinColumn(name = "client_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Enumerated(STRING)
